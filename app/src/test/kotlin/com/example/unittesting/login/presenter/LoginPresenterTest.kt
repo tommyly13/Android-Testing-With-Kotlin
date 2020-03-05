@@ -59,7 +59,7 @@ class LoginPresenterTest {
         given(resourcesStub.getString(anyInt())).willReturn("error")
         given(loginRepositoryStub.login(any(), any())).willReturn(Observable.just(false))
         //when
-        objectUnderTest.attemptLogin(LoginCredentials(login = "valid", password = "incorrectPassword"))
+        objectUnderTest.attemptLogin(LoginCredentials(login = "valid", password = "incorrectPassword2"))
         //then
         val ordered = inOrder(loginViewMock)
         ordered.verify(loginViewMock).showLoginError(null)
